@@ -1,11 +1,15 @@
+import React from "react";
 import { StatusBar } from 'expo-status-bar';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import walp from "./assets/walp.jpeg"
 import { BlurView } from "expo-blur";
+import {REACT_APP_BE_SERVER} from "@env"
 
 export default function App() {
+  console.log("JUHU THE TERMINAL");
+  console.log(REACT_APP_BE_SERVER);
   return (
-      <ImageBackground source={walp} resizeMode="cover" style={styles.image}>
+    <ImageBackground source={walp} style={styles.image}>
       <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)'}}>
         <Text style={styles.transpBg}>Some text inside</Text>
       </BlurView>
