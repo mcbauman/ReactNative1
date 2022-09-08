@@ -22,7 +22,7 @@ export default function App() {
          color = "white"
       />
       </BlurView>
-      {user=="0"?<LogIn user={user} setUser={setUser} />:<ToDoList/>}
+      {user=="0"?<LogIn user={user} setUser={setUser} />:<ToDoList user={user} setUser={setUser} />}
       <Text>Open up App.js to start working on your app!</Text>
       <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)'}}>
         <Text style={styles.transpBg}>Some more content in second Line</Text>
