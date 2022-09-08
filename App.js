@@ -14,17 +14,21 @@ export default function App() {
   console.log(REACT_APP_BE_SERVER);
   return (
     <ImageBackground source={walp} style={styles.image}>
-      <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)'}}>
-        <Text style={styles.transpBg}>`Some text inside ${user}`</Text>
+      <BlurView intensity={10} 
+      style={{backgroundColor:'rgba(0, 0, 0, 0.3)',
+      flexDirection: "row",
+      alignItems:"flex-end",
+      height:"8%"}}>
+        <Text style={styles.transpBg}>DoTo</Text>
         <Button
-         onPress = {()=>{setUser("0")}}
-         title = "Log out"
-         color = "white"
+          style={styles.transpBg}
+          onPress = {()=>{setUser("0")}}
+          title = "Log out"
+          color = "white"
       />
       </BlurView>
       {user=="0"?<LogIn user={user} setUser={setUser} />:<ToDoList user={user} setUser={setUser} />}
-      <Text>Open up App.js to start working on your app!</Text>
-      <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)'}}>
+      <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)',height:"5%",alignItems:"center"}}>
         <Text style={styles.transpBg}>Some more content in second Line</Text>
       </BlurView>
       <StatusBar />
@@ -38,11 +42,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   transpBg:{
-    fontSize:16,
+    flex:1,
+    padding:"2%",
+    fontSize:18,
     color:"white",
-    textAlign:"center",
-    paddingVertical: 36,
-    alignItems:"center",
-    justifyContent:"center",
+    // textAlign:"center",
+    // // paddingVertical: 30,
+    // alignItems:"center",
+    // justifyContent:"center",
   }
 });
