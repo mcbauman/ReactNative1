@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Button} from "react-native";
 import { BlurView } from "expo-blur";
 import axios from "axios";
 import NewTask from "./NewTask";
+import EditTask from "./EditTask";
 
 export default function LogInList(props){
 
@@ -23,6 +24,7 @@ export default function LogInList(props){
         GetItems();
     },[])
     useEffect(()=>{
+        console.log("Reload Get Items");
         GetItems();
     },[newTaksReload])
 
@@ -43,10 +45,9 @@ export default function LogInList(props){
                     <Text style={styles.textItem}>{element.itemName}</Text>
                     <Text style={styles.textItem}>{element.discription}</Text>
                     <View>
-                    <Button
-                        title = "Change"
-                        color = "blue"/>
-                    <Button
+                        <EditTask user={props.user} id={element._id}
+                        reload={newTaksReload} setReload={setNewTaskReaload}/>
+                        <Button
                         onPress={()=>removeItem(element._id,element.itemName,element.discription)}
                         title = "Delete"
                         color = "blue"/>
