@@ -20,7 +20,10 @@ export default function LogIn(props){
     return (
         <View style={St.wrapper}>
             <BlurView intensity={10}  style={[St.line,St.dark]}>
-                <TextInput onChangeText={text=>setUserName(text)} 
+                <TextInput 
+                autoCapitalize='none'
+                autoCorrect={false}
+                onChangeText={text=>setUserName(text)} 
                 placeholder="Name"
                 placeholderTextColor="white"
                 padding="2%"
