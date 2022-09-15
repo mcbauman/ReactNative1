@@ -29,7 +29,7 @@ export default function App() {
       </BlurView>
       {user=="0"?<LogIn user={user} setUser={setUser} />:<ToDoList user={user} setUser={setUser} />}
       <BlurView intensity={10} style={{backgroundColor:'rgba(0, 0, 0, 0.3)',height:"5%",alignItems:"center"}}>
-        <Text style={styles.transpBg}>Some more content in second Line</Text>
+        <Text style={styles.transpBg}>First React Native App by Matthias Baumann</Text>
       </BlurView>
       <StatusBar />
     </ImageBackground>
@@ -46,9 +46,5 @@ const styles = StyleSheet.create({
     padding:"2%",
     fontSize:18,
     color:"white",
-    // textAlign:"center",
-    // // paddingVertical: 30,
-    // alignItems:"center",
-    // justifyContent:"center",
   }
 });

@@ -61,7 +61,8 @@ const St=StyleSheet.create({
         padding:"2%",
         fontSize:18,
         color:"white",
-        // borderRadius:10,
+        overflow:"hidden",
+        borderRadius:10,
         // justifyContent:"center",
         alignItems:"center"
     },

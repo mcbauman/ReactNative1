@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, StyleSheet, Button} from "react-native";
+import { Text, View, StyleSheet, Button, ScrollView} from "react-native";
 import { BlurView } from "expo-blur";
 import axios from "axios";
 import NewTask from "./NewTask";
@@ -39,7 +39,7 @@ export default function LogInList(props){
     }
 
     return (
-        <View>
+        <ScrollView>
             {items.length>0?items.map(element => {
                 return <BlurView key={element._id} style={styles.listItem}>
                     <Text style={styles.textItem}>{element.itemName}</Text>
@@ -55,16 +55,18 @@ export default function LogInList(props){
                 </BlurView>
             }):<Text>Loading</Text>}
             <NewTask user={props.user} reload={newTaksReload} setReload={setNewTaskReaload}/>
-        </View>
+        </ScrollView>
     )
 }
 
 const styles=StyleSheet.create({
     listItem:{
-        marginTop:"2%",
+        margin:"2%",
         padding:"2%",
         flexDirection:"row",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        borderRadius:10,
+        overflow:"hidden"
     },
     textItem:{
         flex:1,
